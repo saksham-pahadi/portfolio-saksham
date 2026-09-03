@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import { motion, useScroll, useSpring } from "framer-motion";
 
-export function Noise() { return <div className="noise" aria-hidden="true"/>; }
+export function Noise() { return <div className="noise w-screen" aria-hidden="true"/>; }
 
 export function PageTransition({ children }: { children: React.ReactNode }) {
   const { scrollYProgress } = useScroll();

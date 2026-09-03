@@ -16,7 +16,13 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         if (!email || !password) return null;
 
         await connectDB();
-        let user = await User.findOne({ email }).lean();
+        let user = (await User.findOne({ email }).lean()) as {
+          _id: unknown;
+          name: string;
+          email: string;
+          passwordHash: string;
+          role: string;
+        } | null;
         if (!user) {
           const bootEmail = process.env.ADMIN_EMAIL?.trim().toLowerCase();
           const bootPassword = process.env.ADMIN_PASSWORD;

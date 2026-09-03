@@ -11,5 +11,5 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en" suppressHydrationWarning><body><Noise /><CursorFX /><AnalyticsTracker /><PageTransition>{children}</PageTransition></body></html>;
+  return <html lang="en" suppressHydrationWarning className="overflow-x-hidden max-w-screen"><body ><Noise /><CursorFX /><AnalyticsTracker /><PageTransition>{children}</PageTransition></body></html>;
 }
