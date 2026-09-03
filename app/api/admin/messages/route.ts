@@ -1,0 +1,2 @@
+import { NextResponse } from "next/server"; import { auth } from "@/auth"; import { connectDB } from "@/lib/mongodb"; import Message from "@/models/Message";
+export async function GET(){const s=await auth();if(!s?.user)return NextResponse.json({error:"Unauthorized"},{status:401});await connectDB();const docs=await Message.find().select("-ipHash").sort({createdAt:-1}).limit(200).lean();return NextResponse.json(docs.map(d=>({...d,_id:String(d._id)})));}

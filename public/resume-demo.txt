@@ -1,0 +1,17 @@
+SAKSHAM
+Full-Stack Developer
+
+Transforming bold ideas into scalable, production-ready software.
+
+CORE STACK
+JavaScript · TypeScript · React · Next.js · Node.js · Express · MongoDB · MySQL · Tailwind CSS
+
+SPECIALTIES
+Product engineering · UI systems · Backend APIs · Database design · SEO · Performance
+
+CONTACT
+hello@saksham.dev · India / Remote
+GitHub: https://github.com/saksham-pahadi
+LinkedIn: https://linkedin.com/in/saksham-demo
+
+Replace this demo résumé file with your production PDF before deployment.

@@ -1,0 +1,2 @@
+"use client"; import { useRouter } from "next/navigation"; import { useState } from "react";
+export default function DeleteButton({url,label}:{url:string;label:string}){const r=useRouter();const[busy,setBusy]=useState(false);return <button disabled={busy} onClick={async()=>{if(!confirm("Delete this item?"))return;setBusy(true);await fetch(url,{method:"DELETE"});r.refresh();}} className="rounded-xl border border-rose-500/15 px-3 py-2 text-xs text-rose-300/70 hover:bg-rose-500/5">{busy?"Deleting…":label}</button>}
