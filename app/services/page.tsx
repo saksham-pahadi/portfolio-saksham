@@ -26,7 +26,7 @@ export default function ServicesPage() {
   return (
     <main className="min-h-screen bg-[#09080d]">
       <SiteHeader />
-      <div className="mx-auto max-w-6xl px-5 pb-28 pt-5 md:px-8">
+      <div className="mx-auto max-w-6xl px-5 pb-28 pt-25 md:px-8">
         <Reveal>
           <p className="mono text-xs uppercase tracking-[.28em] text-[#9b5cff]">
             services / how I help
@@ -40,10 +40,10 @@ export default function ServicesPage() {
         <div className="mt-14 grid gap-4 md:grid-cols-2">
           {services.map(([n, t, d], i) => (
             <Reveal key={n} delay={i * 0.05}>
-              <div className="rounded-[28px] border border-white/[.07] bg-[#111017] p-7">
+              <div className="rounded-[28px] border border-white/7 bg-[#111017] p-7">
                 <p className="mono text-xs text-[#d6ff3f]">{n}</p>
                 <h2 className="mt-5 text-2xl font-semibold">{t}</h2>
-                <p className="mt-3 text-sm leading-7 text-white/[.45]">{d}</p>
+                <p className="mt-3 text-sm leading-7 text-white/45">{d}</p>
               </div>
             </Reveal>
           ))}

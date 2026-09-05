@@ -3,10 +3,12 @@ import { FormEvent, useState } from "react";
 import { signIn } from "next-auth/react";
 import Link from "next/link";
 import { ArrowLeft, Loader2 } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const router = useRouter();
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setLoading(true);
@@ -22,23 +24,24 @@ export default function LoginPage() {
       setLoading(false);
       return;
     }
-    window.location.href = "/admin/dashboard";
+    router.push("/admin/dashboard");
+    router.refresh();
   }
   return (
-    <main className="min-h-screen grid place-items-start bg-[#09080d] px-5 ">
-      <div className="w-full max-w-md ">
+    <main className="min-h-screen bg-[#09080d] px-5 pt-20 md:pt-5 ">
         <Link
           href="/"
-          className="mb-10 inline-flex items-center gap-2 text-xs text-white/[.35]"
+          className="mb-10 inline-flex items-center gap-2 text-xs text-white/35"
         >
           <ArrowLeft size={14} /> back to site
         </Link>
-        <div className="rounded-[30px] border border-white/[.08] bg-[#111017] p-7 shadow-glow">
+      <div className="w-full max-w-md mx-auto ">
+        <div className="rounded-[30px] border border-white/8 bg-[#111017] p-7 shadow-glow">
           <p className="mono text-xs uppercase tracking-[.25em] text-[#9b5cff]">
             restricted area
           </p>
           <h1 className="mt-3 text-3xl font-bold">Welcome back.</h1>
-          <p className="mt-2 text-sm text-white/[.4]">
+          <p className="mt-2 text-sm text-white/40">
             Sign in to manage your portfolio.
           </p>
           <form onSubmit={onSubmit} className="mt-8 grid gap-4">
@@ -72,7 +75,7 @@ export default function LoginPage() {
             </button>
             {error && <p className="text-sm text-rose-400">{error}</p>}
           </form>
-          <p className="mt-6 text-[11px] leading-5 text-white/[.25]">
+          <p className="mt-6 text-[11px] leading-5 text-white/25">
             First login can use the ADMIN_EMAIL and ADMIN_PASSWORD environment
             values; the admin account is then persisted in MongoDB as a bcrypt
             hash.

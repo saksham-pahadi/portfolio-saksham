@@ -17,10 +17,10 @@ export default async function ProjectsPage() {
   return (
     <main className="min-h-screen bg-[#09080d]">
       <SiteHeader />
-      <div className="mx-auto max-w-7xl px-5 pb-28 pt-5 md:px-8">
+      <div className="mx-auto max-w-7xl px-5 pb-28 pt-25 md:px-8">
         <Link
           href="/"
-          className="inline-flex items-center gap-2 text-xs text-white/[.35]"
+          className="inline-flex items-center gap-2 text-xs text-white/35"
         >
           <ArrowLeft size={14} /> home
         </Link>
@@ -31,7 +31,7 @@ export default async function ProjectsPage() {
           <h1 className="mt-3 text-6xl font-black tracking-[-.06em] md:text-8xl">
             Selected work.
           </h1>
-          <p className="mt-6 max-w-2xl text-base leading-7 text-white/[.45]">
+          <p className="mt-6 max-w-2xl text-base leading-7 text-white/45">
             A collection of product experiments, client-style builds and systems
             designed to survive contact with reality.
           </p>
@@ -41,27 +41,29 @@ export default async function ProjectsPage() {
             <Reveal key={p._id}>
               <article
                 id={p.slug}
-                className="grid overflow-hidden rounded-[32px] border border-white/[.07] bg-[#111017] lg:grid-cols-[1.1fr_.9fr]"
+                className="grid overflow-hidden rounded-4xl border border-white/7 bg-[#111017] lg:grid-cols-[1.1fr_.9fr]"
               >
-                <div className="relative min-h-[280px]">
-                  <img
+                <div className="relative min-h-70">
+                  <Image
+                    width={800}
+                    height={500}
                     src={p.image || `/project-${(i % 4) + 1}.svg`}
                     alt={p.title}
                     className="h-full w-full object-cover"
                   />
                 </div>
                 <div className="p-7 md:p-9">
-                  <p className="mono text-xs text-white/[.25]">
+                  <p className="mono text-xs text-white/25">
                     CASE {String(i + 1).padStart(2, "0")}
                   </p>
                   <h2 className="mt-3 text-3xl font-bold">{p.title}</h2>
-                  <p className="mt-4 text-sm leading-7 text-white/[.45]">
+                  <p className="mt-4 text-sm leading-7 text-white/45">
                     {p.description}
                   </p>
                   <div className="mt-6 flex flex-wrap gap-2">
                     {p.stack?.map((s: string) => (
                       <span
-                        className="rounded-full border border-white/[.08] px-3 py-1.5 text-xs text-white/[.45]"
+                        className="rounded-full border border-white/8 px-3 py-1.5 text-xs text-white/45"
                         key={s}
                       >
                         {s}
@@ -82,7 +84,7 @@ export default async function ProjectsPage() {
                       <a
                         data-cursor
                         href={p.githubUrl}
-                        className="inline-flex items-center gap-2 rounded-full border border-white/[.08] px-4 py-2.5 text-xs text-white/[.65]"
+                        className="inline-flex items-center gap-2 rounded-full border border-white/8 px-4 py-2.5 text-xs text-white/65"
                       >
                         GitHub <ArrowUpRight size={14} />
                       </a>

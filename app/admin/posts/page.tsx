@@ -34,21 +34,21 @@ export default async function AdminPosts() {
           >
             <div>
               <p className="text-lg font-semibold">{p.title}</p>
-              <p className="mt-1 text-xs text-white/[.35]">
+              <p className="mt-1 text-xs text-white/35">
                 {formatDate(p.publishedAt)} ·{" "}
                 {p.published ? "Published" : "Draft"}
               </p>
             </div>
-            <div className="flex gap-2">
+            <div className="flex gap-2 items-center">
               <Link
                 href={`/blog/${p.slug}`}
-                className="rounded-xl border border-white/[.07] px-3 py-2 text-xs text-white/[.45] hover:text-white"
+                className="rounded-xl border border-white/[.07] px-3 py-2 text-xs text-white/45 hover:text-white"
               >
                 View <ArrowUpRight size={13} className="inline" />
               </Link>
               <Link
                 href={`/admin/posts/${p._id}`}
-                className="rounded-xl border border-white/[.07] px-3 py-2 text-xs text-white/[.45]"
+                className="rounded-xl border border-white/[.07] px-3 py-2 text-xs text-white/45"
               >
                 Edit
               </Link>

@@ -21,7 +21,7 @@ export default function ExperiencePage() {
   return (
     <main className="min-h-screen bg-[#09080d]">
       <SiteHeader />
-      <div className="mx-auto max-w-5xl px-5 pb-28 pt-5 md:px-8">
+      <div className="mx-auto max-w-5xl px-5 pb-28 pt-25 md:px-8">
         <Reveal>
           <p className="mono text-xs uppercase tracking-[.28em] text-[#9b5cff]">
             experience / timeline
@@ -33,13 +33,13 @@ export default function ExperiencePage() {
         <div className="mt-14 grid gap-4">
           {items.map((x, i) => (
             <Reveal key={x.year} delay={i * 0.06}>
-              <div className="rounded-[26px] border border-white/[.07] bg-[#111017] p-7 md:grid md:grid-cols-[150px_1fr] md:gap-8">
+              <div className="rounded-[26px] border border-white/7 bg-[#111017] p-7 md:grid md:grid-cols-[150px_1fr] md:gap-8">
                 <p className="mono text-xs text-[#d6ff3f]">{x.year}</p>
                 <div>
                   <h2 className="mt-2 text-2xl font-semibold md:mt-0">
                     {x.role}
                   </h2>
-                  <p className="mt-3 text-sm leading-7 text-white/[.45]">
+                  <p className="mt-3 text-sm leading-7 text-white/45">
                     {x.desc}
                   </p>
                 </div>

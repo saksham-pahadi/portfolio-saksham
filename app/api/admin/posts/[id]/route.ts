@@ -1,3 +1,35 @@
-import { NextResponse } from "next/server"; import { auth } from "@/auth"; import { connectDB } from "@/lib/mongodb"; import Post from "@/models/Post"; import { slugify } from "@/lib/utils";
-export async function PUT(req:Request,{params}:{params:Promise<{id:string}>}){const s=await auth();if(!s?.user)return NextResponse.json({error:"Unauthorized"},{status:401});const {id}=await params;await connectDB();const b=await req.json();const doc=await Post.findByIdAndUpdate(id,{...b,slug:slugify(b.slug||b.title)},{new:true});if(!doc)return NextResponse.json({error:"Not found"},{status:404});return NextResponse.json({_id:String(doc._id)});}
-export async function DELETE(_:Request,{params}:{params:Promise<{id:string}>}){const s=await auth();if(!s?.user)return NextResponse.json({error:"Unauthorized"},{status:401});const {id}=await params;await connectDB();await Post.findByIdAndDelete(id);return NextResponse.json({ok:true});}
+import { NextResponse } from "next/server";
+import { auth } from "@/auth";
+import { connectDB } from "@/lib/mongodb";
+import Post from "@/models/Post";
+import { slugify } from "@/lib/utils";
+export async function PUT(
+  req: Request,
+  { params }: { params: Promise<{ id: string }> },
+) {
+  const s = await auth();
+  if (!s?.user)
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  const { id } = await params;
+  await connectDB();
+  const b = await req.json();
+  const doc = await Post.findByIdAndUpdate(
+    id,
+    { ...b, slug: slugify(b.slug || b.title) },
+    { new: true },
+  );
+  if (!doc) return NextResponse.json({ error: "Not found" }, { status: 404 });
+  return NextResponse.json({ _id: String(doc._id) });
+}
+export async function DELETE(
+  _: Request,
+  { params }: { params: Promise<{ id: string }> },
+) {
+  const s = await auth();
+  if (!s?.user)
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  const { id } = await params;
+  await connectDB();
+  await Post.findByIdAndDelete(id);
+  return NextResponse.json({ ok: true });
+}

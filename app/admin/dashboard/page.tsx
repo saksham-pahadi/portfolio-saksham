@@ -31,11 +31,11 @@ export default async function Dashboard() {
             control room
           </p>
           <h1 className="mt-2 text-4xl font-bold">Good to see you.</h1>
-          <p className="mt-2 text-sm text-white/[.4]">
+          <p className="mt-2 text-sm text-white/40">
             Your portfolio has a pulse. Here’s the snapshot.
           </p>
         </div>
-        <p className="mono text-[10px] text-white/[.25]">LIVE / MONGODB</p>
+        <p className="mono text-[10px] text-white/25">LIVE / MONGODB</p>
       </div>
       <div className="mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
         {[
@@ -49,7 +49,7 @@ export default async function Dashboard() {
             className="rounded-[22px] border border-white/[.07] bg-[#111017] p-5"
           >
             <Icon size={18} className="text-[#9b5cff]" />
-            <p className="mt-5 text-xs text-white/[.35]">{label}</p>
+            <p className="mt-5 text-xs text-white/35">{label}</p>
             <p className="mt-1 text-3xl font-black">{value}</p>
           </div>
         ))}
@@ -61,7 +61,7 @@ export default async function Dashboard() {
               <p className="text-sm font-semibold">
                 Views over the last 14 days
               </p>
-              <p className="mt-1 text-xs text-white/[.3]">
+              <p className="mt-1 text-xs text-white/30">
                 Stored as daily counters in MongoDB.
               </p>
             </div>
@@ -75,12 +75,12 @@ export default async function Dashboard() {
               >
                 <div
                   title={`${d._id}: ${d.count}`}
-                  className="rounded-t-lg bg-gradient-to-t from-[#5b1fb3] to-[#9b5cff]"
+                  className="rounded-t-lg bg-linear-to-t from-[#5b1fb3] to-[#9b5cff]"
                   style={{
                     height: `${Math.max(8, Math.round((d.count / Math.max(...history.map((x: any) => x.count), 1)) * 100))}%`,
                   }}
                 />
-                <span className="text-center text-[9px] text-white/[.2]">
+                <span className="text-center text-[9px] text-white/20">
                   {String(d._id).slice(5)}
                 </span>
               </div>
@@ -98,7 +98,7 @@ export default async function Dashboard() {
             ].map((n) => (
               <div
                 key={n}
-                className="rounded-2xl bg-white/[.025] p-4 text-xs leading-5 text-white/[.45]"
+                className="rounded-2xl bg-white/2.5 p-4 text-xs leading-5 text-white/45"
               >
                 {n}
               </div>

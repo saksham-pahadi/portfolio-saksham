@@ -27,7 +27,7 @@ export default async function AdminLayout({
       />
 
       {/* Aside Section */}
-      <aside className="fixed inset-y-0 left-0 z-50 w-64 -translate-x-full border-r border-white/[.06] bg-[#0d0b11] p-5 transition-transform duration-200 peer-checked:translate-x-0 lg:translate-x-0">
+      <aside className="fixed inset-y-0 left-0 z-50 w-64 -translate-x-full border-r border-white/6 bg-[#0d0b11] p-5 transition-transform duration-200 peer-checked:translate-x-0 lg:translate-x-0">
         <div className="flex items-center justify-between">
           <Link href="/" className="hand text-2xl text-[#d6ff3f]">
             Saksham.
@@ -50,7 +50,7 @@ export default async function AdminLayout({
             <label htmlFor="mobile-sidebar" key={label} className="block cursor-pointer">
               <Link
                 href={href}
-                className="flex items-center gap-3 rounded-xl px-3 py-3 text-sm text-white/[.5] hover:bg-white/[.05] hover:text-white"
+                className="flex items-center gap-3 rounded-xl px-3 py-3 text-sm text-white/50 hover:bg-white/5 hover:text-white"
               >
                 <Icon size={16} />
                 {label}
@@ -63,7 +63,7 @@ export default async function AdminLayout({
           <label htmlFor="mobile-sidebar" className="block cursor-pointer">
             <Link
               href="/"
-              className="mb-2 flex items-center gap-2 rounded-xl px-3 py-2 text-xs text-white/[.35] hover:bg-white/[.05]"
+              className="mb-2 flex items-center gap-2 rounded-xl px-3 py-2 text-xs text-white/35 hover:bg-white/5"
             >
               <ExternalLink size={14} /> View site
             </Link>
@@ -75,7 +75,7 @@ export default async function AdminLayout({
               await signOut({ redirectTo: "/admin/login" });
             }}
           >
-            <button className="w-full rounded-xl border border-white/[.07] px-3 py-2 text-left text-xs text-white/[.35] hover:bg-white/[.05]">
+            <button className="w-full rounded-xl border border-white/[.07] px-3 py-2 text-left text-xs text-white/35 hover:bg-white/5">
               Sign out
             </button>
           </form>
@@ -84,8 +84,8 @@ export default async function AdminLayout({
 
       {/* Main Content Area */}
       <div className="lg:pl-64">
-        <div className="fixed top-0 z-45 w-screen border-b border-white/[.06] px-5 py-4 lg:hidden">
-          <div className="flex items-center justify-between">
+        <div className="fixed top-0 z-45 w-screen border-b border-white/6 px-5 py-4 lg:hidden backdrop-blur-2xl">
+          <div className="flex items-center justify-between ">
             <div className="flex items-center gap-3">
               <label
                 htmlFor="mobile-sidebar"
@@ -97,7 +97,7 @@ export default async function AdminLayout({
                 Saksham.
               </Link>
             </div>
-            <Link href="/admin/dashboard" className="text-xs text-white/[.5]">
+            <Link href="/admin/dashboard" className="text-xs text-white/50">
               Dashboard
             </Link>
           </div>

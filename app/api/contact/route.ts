@@ -15,15 +15,30 @@ const schema = z.object({
 export async function POST(req: Request) {
   try {
     const parsed = schema.safeParse(await req.json());
-    if (!parsed.success) return NextResponse.json({ error: "Please check the form fields." }, { status: 400 });
+    if (!parsed.success)
+      return NextResponse.json(
+        { error: "Please check the form fields." },
+        { status: 400 },
+      );
     await connectDB();
-    const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
-    const ipHash = crypto.createHash("sha256").update(`${ip}:${process.env.AUTH_SECRET || "salt"}`).digest("hex");
+    const ip =
+      req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
+    const ipHash = crypto
+      .createHash("sha256")
+      .update(`${ip}:${process.env.AUTH_SECRET || "salt"}`)
+      .digest("hex");
     const message = await Message.create({ ...parsed.data, ipHash });
-    try { await sendContactNotification(parsed.data); } catch (error) { console.error("email notification failed", error); }
+    try {
+      await sendContactNotification(parsed.data);
+    } catch (error) {
+      console.error("email notification failed", error);
+    }
     return NextResponse.json({ ok: true, id: String(message._id) });
   } catch (error) {
     console.error(error);
-    return NextResponse.json({ error: "Unable to send your message right now." }, { status: 500 });
+    return NextResponse.json(
+      { error: "Unable to send your message right now." },
+      { status: 500 },
+    );
   }
 }

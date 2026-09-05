@@ -17,7 +17,7 @@ export default function SiteHeader() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed w-full top-0 z-50 border-b border-white/[.06] bg-[#09080d]/80 backdrop-blur-xl transition-all">
+    <header className="fixed w-full top-0 z-50 border-b border-white/6 bg-[#09080d]/80 backdrop-blur-xl transition-all">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8 ">
         <Link
           href="/"
@@ -34,7 +34,7 @@ export default function SiteHeader() {
               data-cursor
               key={label}
               href={href}
-              className="text-xs font-medium text-white/[.6] transition hover:text-white"
+              className="text-xs font-medium text-white/60 transition hover:text-white"
             >
               {label}
             </Link>
@@ -42,7 +42,7 @@ export default function SiteHeader() {
           <Link
             data-cursor
             href="/admin/login"
-            className="inline-flex items-center gap-1 rounded-full border border-white/[.1] px-4 py-2 text-xs font-medium text-white/[.6] transition hover:border-[#9b5cff]/60 hover:text-white"
+            className="inline-flex items-center gap-1 rounded-full border border-white/10 px-4 py-2 text-xs font-medium text-white/60 transition hover:border-[#9b5cff]/60 hover:text-white"
           >
             Admin <ArrowUpRight size={13} />
           </Link>
@@ -51,21 +51,21 @@ export default function SiteHeader() {
         <button
           aria-label="Open menu"
           onClick={() => setOpen((v) => !v)}
-          className="grid h-10 w-10 place-items-center rounded-full border border-white/[.1] text-white transition hover:bg-white/[.05] md:hidden"
+          className="grid h-10 w-10 place-items-center rounded-full border border-white/10 text-white transition hover:bg-white/5 md:hidden"
         >
           {open ? <X size={18} /> : <Menu size={18} />}
         </button>
       </div>
 
       {open && (
-        <nav className="border-t border-white/[.06] bg-[#0c0a10] px-6 py-6 md:hidden">
+        <nav className="border-t border-white/6 bg-[#0c0a10] px-6 py-6 md:hidden">
           <div className="flex flex-col gap-4">
             {links.map(([label, href]) => (
               <Link
                 key={label}
                 href={href}
                 onClick={() => setOpen(false)}
-                className="text-base font-medium text-white/[.7] transition hover:text-white"
+                className="text-base font-medium text-white/70 transition hover:text-white"
               >
                 {label}
               </Link>
@@ -73,7 +73,7 @@ export default function SiteHeader() {
             <Link
               href="/admin/login"
               onClick={() => setOpen(false)}
-              className="mt-2 inline-flex w-fit items-center gap-1 rounded-full border border-white/[.1] px-5 py-2.5 text-xs font-medium text-white"
+              className="mt-2 inline-flex w-fit items-center gap-1 rounded-full border border-white/10 px-5 py-2.5 text-xs font-medium text-white"
             >
               Admin <ArrowUpRight size={13} />
             </Link>

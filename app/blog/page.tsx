@@ -24,7 +24,7 @@ export default async function BlogPage() {
       <div className="mx-auto max-w-6xl px-5 pb-24 pt-5 md:px-8">
         <Link
           href="/"
-          className="inline-flex items-center gap-2 text-xs text-white/[.35] hover:text-white"
+          className="inline-flex items-center gap-2 text-xs text-white/35 hover:text-white"
         >
           <ArrowLeft size={14} /> back home
         </Link>
@@ -35,7 +35,7 @@ export default async function BlogPage() {
           <h1 className="mt-3 text-6xl font-black tracking-[-.06em] md:text-8xl">
             The notebook.
           </h1>
-          <p className="mt-6 max-w-2xl text-base leading-7 text-white/[.45]">
+          <p className="mt-6 max-w-2xl text-base leading-7 text-white/45">
             Notes on software, product thinking, design systems, debugging, and
             whatever I’m currently trying to understand.
           </p>
@@ -50,7 +50,7 @@ export default async function BlogPage() {
               >
                 <div>
                   <p className="mono text-xs text-[#9b5cff]">0{i + 1}</p>
-                  <p className="mt-2 text-xs text-white/[.25]">
+                  <p className="mt-2 text-xs text-white/25">
                     {formatDate(post.publishedAt)}
                   </p>
                 </div>
@@ -59,7 +59,7 @@ export default async function BlogPage() {
                     {post.tags?.map((tag: string) => (
                       <span
                         key={tag}
-                        className="rounded-full border border-white/[.07] px-2.5 py-1 text-[10px] uppercase tracking-[.12em] text-white/[.35]"
+                        className="rounded-full border border-white/[.07] px-2.5 py-1 text-[10px] uppercase tracking-[.12em] text-white/35"
                       >
                         #{tag}
                       </span>
@@ -68,11 +68,11 @@ export default async function BlogPage() {
                   <h2 className="mt-4 text-2xl font-semibold group-hover:text-[#d6ff3f] md:text-3xl">
                     {post.title}
                   </h2>
-                  <p className="mt-3 max-w-2xl text-sm leading-7 text-white/[.4]">
+                  <p className="mt-3 max-w-2xl text-sm leading-7 text-white/40">
                     {post.excerpt}
                   </p>
                 </div>
-                <ArrowUpRight className="text-white/[.25] transition group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-white" />
+                <ArrowUpRight className="text-white/25 transition group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-white" />
               </Link>
             </Reveal>
           ))}

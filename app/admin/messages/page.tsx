@@ -20,19 +20,19 @@ export default async function Messages() {
       <h1 className="mt-2 text-3xl font-bold">Messages</h1>
       <div className="mt-8 grid gap-4">
         {docs.length === 0 ? (
-          <div className="rounded-2xl border border-white/[.07] bg-[#111017] p-8 text-sm text-white/[.35]">
+          <div className="rounded-2xl border border-white/[.07] bg-[#111017] p-8 text-sm text-white/35">
             Your inbox is clean.
           </div>
         ) : (
           docs.map((m: any) => (
             <div
               key={String(m._id)}
-              className="rounded-[24px] border border-white/[.07] bg-[#111017] p-6"
+              className="rounded-3xl border border-white/[.07] bg-[#111017] p-6"
             >
               <div className="flex flex-col justify-between gap-3 md:flex-row">
                 <div>
                   <p className="text-lg font-semibold">{m.subject}</p>
-                  <p className="mt-1 text-xs text-white/[.35]">
+                  <p className="mt-1 text-xs text-white/35">
                     {m.name} · {m.email} · {formatDate(m.createdAt)}
                   </p>
                 </div>

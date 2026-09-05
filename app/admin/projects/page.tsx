@@ -30,20 +30,20 @@ export default async function AdminProjects() {
 					>
 						<div>
 							<p className="text-lg font-semibold">{p.title}</p>
-							<p className="mt-1 text-xs text-white/[.35]">
+							<p className="mt-1 text-xs text-white/35">
 								/{p.slug} · {p.featured ? "Featured" : "Standard"}
 							</p>
 						</div>
-						<div className="flex gap-2">
+						<div className="flex items-center gap-2">
 							<Link
 								href={`/projects#${p.slug}`}
-								className="rounded-xl border border-white/[.07] px-3 py-2 text-xs text-white/[.45] hover:text-white"
+								className="rounded-xl border border-white/[.07] px-3 py-2 text-xs text-white/45 hover:text-white"
 							>
 								View <ArrowUpRight size={13} className="inline" />
 							</Link>
 							<Link
 								href={`/admin/projects/${p._id}`}
-								className="rounded-xl border border-white/[.07] px-3 py-2 text-xs text-white/[.45]"
+								className="rounded-xl border border-white/[.07] px-3 py-2 text-xs text-white/45"
 							>
 								Edit
 							</Link>
