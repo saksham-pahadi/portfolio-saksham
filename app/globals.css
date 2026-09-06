@@ -25,6 +25,13 @@
   box-sizing: border-box;
 }
 
+/* Hide default browser cursor only on fine pointer devices (desktop/mouse) */
+@media (pointer: fine) {
+  *, ::before, ::after {
+    cursor: none !important;
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }

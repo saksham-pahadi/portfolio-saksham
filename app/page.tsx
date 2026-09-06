@@ -300,10 +300,12 @@ export default async function Home() {
                     <h3 className="text-2xl font-semibold tracking-tight">
                       {p.title}
                     </h3>
-                    <ArrowUpRight
-                      size={20}
-                      className="text-white/30 transition group-hover:text-white"
-                    />
+                    <Link href={p.liveUrl} target="_blank">
+                      <ArrowUpRight
+                        size={20}
+                        className="text-white/30 transition group-hover:text-white"
+                      />
+                    </Link>
                   </div>
                   <p className="mt-3 text-sm leading-6 text-white/50">
                     {p.description}
@@ -487,8 +489,10 @@ export default async function Home() {
               <Link
                 href="#contact"
                 className="inline-flex w-fit items-center gap-2 rounded-full bg-[#d6ff3f] px-6 py-3.5 text-sm font-bold text-black transition hover:bg-[#c3f02b]"
-              >
+              >  <p className="flex items-center gap-2 text-purple-600">
+
                 Let&apos;s talk <ArrowUpRight size={16} />
+              </p>
               </Link>
             </div>
             <div className="mt-10 grid gap-4 sm:grid-cols-2 md:grid-cols-3">
@@ -623,7 +627,7 @@ export default async function Home() {
             <Link href="/privacy" className="hover:text-white">
               Privacy
             </Link>
-            <Link href="/admin/login" className="hover:text-white">
+            <Link target="_blank" href="/admin/login" className="hover:text-white">
               Admin
             </Link>
             <span className="mono">v1.0</span>

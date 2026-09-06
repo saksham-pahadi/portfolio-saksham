@@ -73,15 +73,20 @@ export default async function ProjectsPage() {
                   <div className="mt-8 flex gap-3">
                     {p.liveUrl && (
                       <a
+                      target="_blank"
                         data-cursor
                         href={p.liveUrl}
                         className="inline-flex items-center gap-2 rounded-full bg-[#d6ff3f] px-4 py-2.5 text-xs font-bold text-black"
                       >
-                        Live <ArrowUpRight size={14} />
+                        <p className="flex items-center gap-2 text-purple-600">
+
+                           Live <ArrowUpRight size={14} />
+                          </p> 
                       </a>
                     )}
                     {p.githubUrl && (
                       <a
+                      target="_blank"
                         data-cursor
                         href={p.githubUrl}
                         className="inline-flex items-center gap-2 rounded-full border border-white/8 px-4 py-2.5 text-xs text-white/65"

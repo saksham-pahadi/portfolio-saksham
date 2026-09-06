@@ -71,6 +71,7 @@ export default function SiteHeader() {
               </Link>
             ))}
             <Link
+              target="_blank"
               href="/admin/login"
               onClick={() => setOpen(false)}
               className="mt-2 inline-flex w-fit items-center gap-1 rounded-full border border-white/10 px-5 py-2.5 text-xs font-medium text-white"
