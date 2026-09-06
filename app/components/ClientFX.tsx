@@ -43,9 +43,13 @@ export function CursorFX() {
     };
     const onOver = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
-      if (target.closest("a,button,[data-cursor]"))
-        ring.current?.classList.add("scale-150");
-      else ring.current?.classList.remove("scale-150");
+      if (target.closest("a,button")) {
+        ring.current?.classList.remove("border-purple-600","border");
+        ring.current?.classList.add("border-green-600","border-2");
+      } else {
+        ring.current?.classList.remove("border-green-600","border-2");
+        ring.current?.classList.add("border-purple-600","border");
+      }
     };
     window.addEventListener("mousemove", onMove);
     window.addEventListener("mouseover", onOver);
@@ -57,7 +61,7 @@ export function CursorFX() {
   return (
     <>
       <div ref={dot} className="cursor-dot" />
-      <div ref={ring} className="cursor-ring" />
+      <div ref={ring} className="cursor-ring border border-purple-600" />
     </>
   );
 }
