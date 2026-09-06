@@ -47,16 +47,16 @@ async function getContent() {
 
 const timeline = [
   {
-    year: "2024 — Present",
+    year: "2023 — Present",
     role: "Full-Stack Developer",
     company: "Independent / Product Builds",
     desc: "Building production-minded web applications with Next.js, TypeScript, MongoDB and thoughtful UX systems.",
   },
   {
-    year: "2023 — 2024",
-    role: "Developer / BPO → Engineering",
-    company: "Cognizant",
-    desc: "Started professionally in BPO and deliberately pivoted toward software engineering through hands-on product development.",
+    year: "JULY 2026 — SEP 2026",
+    role: "Web Developer Intern",
+    company: "Zidio development",
+    desc: "Contributed to the development of web applications, focusing on front-end and back-end and Ai integration, ensuring seamless user experiences and efficient data management.",
   },
 ];
 
@@ -446,7 +446,7 @@ export default async function Home() {
             03 / experience
           </p>
           <h2 className="mt-3 text-3xl font-bold sm:text-5xl md:text-6xl">
-            A timeline, not a résumé dump.
+            A timeline, not a resume dump.
           </h2>
         </Reveal>
         <div className="mt-10 grid gap-4">
