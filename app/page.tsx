@@ -47,7 +47,7 @@ async function getContent() {
 
 const timeline = [
   {
-    year: "2023 — Present",
+    year: "2026 — Present",
     role: "Full-Stack Developer",
     company: "Independent / Product Builds",
     desc: "Building production-minded web applications with Next.js, TypeScript, MongoDB and thoughtful UX systems.",
@@ -282,7 +282,7 @@ export default async function Home() {
           {projects.map((p: any, index: number) => (
             <Reveal key={p._id} delay={index * 0.06}>
               <article className="group overflow-hidden rounded-[28px] border border-white/7 bg-[#111017] transition hover:-translate-y-1 hover:border-[#9b5cff]/35 hover:shadow-glow">
-                <div className="relative aspect-16/10 overflow-hidden bg-[#0c0b10]">
+                <div className="relative">
                   <Image
                   width={800}
                   height={500}
@@ -608,7 +608,7 @@ export default async function Home() {
                 </div>
                 <Link target="_blank" href="https://linkedin.com/in/saksham-kushwaha-web-dev" className="flex items-center gap-3">
                   <ArrowUpRight size={18} className="text-[#9b5cff]" />{" "}
-                  linkedin.com/in/saksham-demo
+                  linkedin.com/in/saksham-kushwaha-web-dev
                 </Link>
               </div>
             </div>

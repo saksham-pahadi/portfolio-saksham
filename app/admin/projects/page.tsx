@@ -17,9 +17,11 @@ export default async function AdminProjects() {
 				</div>
 				<Link
 					href="/admin/projects/new"
-					className="inline-flex items-center gap-2 rounded-full bg-[#d6ff3f] px-4 py-2 text-xs font-bold text-black"
+					className="inline-flex items-center gap-2 rounded-full bg-[#d6ff3f] px-4 py-2 text-xs font-bold "
 				>
-					<Plus size={14} /> New
+					 <p className="text-purple-500 flex items-center gap-1 text-xs font-bold">
+					<Plus size={14} />
+						New</p>
 				</Link>
 			</div>
 			<div className="mt-8 grid gap-4">

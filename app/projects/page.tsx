@@ -43,7 +43,7 @@ export default async function ProjectsPage() {
                 id={p.slug}
                 className="grid overflow-hidden rounded-4xl border border-white/7 bg-[#111017] lg:grid-cols-[1.1fr_.9fr]"
               >
-                <div className="relative min-h-70">
+                <div className="relative">
                   <Image
                     width={800}
                     height={500}
